@@ -1,0 +1,186 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-main{
+    position: fixed;
+    top: 0;
+    z-index:20;
+    background: #FF5858;
+    width: 100%;
+    height: 10vh;
+}
+
+.nav-main nav{
+    max-width: 1220px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-main nav .logo{
+    height: 40px;
+    width:40px;
+    margin: 0 20px;
+}
+.nav-main nav .logo img{
+    height: 100%;
+    width: 100%;
+}
+.nav-main nav .nav-list{
+    display: flex;
+}
+.nav-main nav .nav-list li{
+    list-style: none;
+    margin: 0 20px;
+}
+.nav-main nav .nav-list li a{
+    color: rgb(58, 57, 57);
+    text-decoration: none;
+        font-size: 20px;
+        transition: 0.3s;
+}
+.nav-main nav .nav-list li a:hover{
+    color: #fff;
+}
+
+.main{
+
+}
+body{
+    background-image: linear-gradient(to bottom right,#333,#6d459b,#2aace0,#55a878,#333);
+    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+    /* background: linear-gradient(115.2deg, #6BFFA6 11.47%, #65C8FF 58.77%, #987BD6 100.38%); */
+	background-size: 200% 200%;
+	animation: gradient 10s linear infinite forwards;
+}
+@keyframes gradient{
+	0% {
+		background-position: 5% 5%;
+	}
+	50% {
+		background-position: 100% 100%;
+	}
+	100% {
+		background-position: 5% 5%;
+	}
+}
+.main .wrapper{
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main .wrapper > h3{
+    margin-top: 100px;
+    font-size: clamp(3rem, 8vw, 6rem);
+    color: white;
+    font-family: 'Archivo Black', sans-serif;
+    padding: 20px 0px;
+}
+.poke-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.poke-container .pokemon{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    background: rgba(238, 238, 238, 0.664);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    border: 2px solid rgb(58, 58, 58);
+}
+.poke-container .pokemon:hover > .img-container img{
+    transform: scale(1.4, 1.4);
+    transition: 1000ms ease;
+    
+}
+
+.poke-container .pokemon .img-container {
+
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    position: relative;
+}
+.poke-container .pokemon .img-container img{
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    transition: 1000ms ease;
+    transform: scale(1, 1);
+    height: 100%;
+    width: 100%;
+}
+.poke-container .pokemon .info{
+    margin-top: 20px;
+}
+
+.poke-container .pokemon .number{
+    background: #fff;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.poke-container .pokemon .name{
+    margin: 15px 0 7px;
+	letter-spacing: 1px;
+}
+/* 
+@media screen and (max-width: 694px){
+    .poke-container{
+
+        width: 100%;
+    }
+    
+    .poke-container .pokemon{
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        cursor: pointer;
+        background: rgba(238, 238, 238, 0.664);
+        border-radius: 20px;
+      margin: 10px auto;
+      padding: 5px 20px;
+        text-align: center;
+        box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+        border: 2px solid rgb(58, 58, 58);
+        z-index: 9;
+    }
+    .poke-container .pokemon .info{
+   margin: 0;
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+    }
+    .poke-container .pokemon .img-container {
+        margin: 10px 15px;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 50%;
+        height: auto;
+        width: 120px;
+    }
+    .poke-container .pokemon .img-container img{
+        height: 100%;
+        width: 100%;
+    }
+    .poke-container .pokemon .name{
+        margin: 0px 19px;
+        letter-spacing: 1px;
+    }
+} */
