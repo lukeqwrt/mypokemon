@@ -3,7 +3,6 @@
     margin: 0;
     font-family: 'Poppins', sans-serif;
 }
-
 .nav-main{
     position: fixed;
     top: 0;
@@ -22,13 +21,22 @@
     align-items: center;
 }
 .nav-main nav .logo{
-    height: 40px;
-    width:40px;
+  
     margin: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-main nav .logo h3{
+    margin-left: 20px;
+    color: rgb(58, 57, 57);
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 30px;
+
 }
 .nav-main nav .logo img{
-    height: 100%;
-    width: 100%;
+    height: 40px;
+    width:40px;
 }
 .nav-main nav .nav-list{
     display: flex;
@@ -46,9 +54,31 @@
 .nav-main nav .nav-list li a:hover{
     color: #fff;
 }
-
+@media screen and (max-width: 522px){
+    .nav-main nav .logo{
+  
+        margin: 0 0 0 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav-main nav .logo h3{
+        margin-left: 12px;
+        color: rgb(58, 57, 57);
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 20px;
+    
+    }
+    .nav-main nav .nav-list li{
+        list-style: none;
+        margin: 0 10px;
+    }
+    .nav-main nav .nav-list li a{
+        font-size: 17px;
+    }
+}
 .main{
-
+    /* height: 100vh; */
 }
 body{
     background-image: linear-gradient(to bottom right,#333,#6d459b,#2aace0,#55a878,#333);
@@ -56,6 +86,7 @@ body{
     /* background: linear-gradient(115.2deg, #6BFFA6 11.47%, #65C8FF 58.77%, #987BD6 100.38%); */
 	background-size: 200% 200%;
 	animation: gradient 10s linear infinite forwards;
+    
 }
 @keyframes gradient{
 	0% {
@@ -69,27 +100,89 @@ body{
 	}
 }
 .main .wrapper{
+    margin-top: 10vh;
+    padding: 5vh 0;
+    animation: article-load 300ms ease-in;
+    animation-fill-mode: forwards;
+    transform: translateY(-20px);
+    opacity: 1;
+    
+    height: 90vh;
     background: rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+display: flex;
+justify-content: center;
+align-items: center;
+
+   
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
+
+@keyframes article-load{
+    0%{
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+html{
+    overflow: hidden;   
+  }
+/* width */
+
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    /* box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.9);  */
+    border-radius: 10px;
+
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(51,51,51); 
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(56, 56, 56); 
+  }
 .main .wrapper > h3{
-    margin-top: 100px;
+    /* margin-top: 100px; */
     font-size: clamp(3rem, 8vw, 6rem);
     color: white;
     font-family: 'Archivo Black', sans-serif;
     padding: 20px 0px;
+
 }
+@media screen and (max-width: 600px){
+
+    ::-webkit-scrollbar {
+        all:unset;
+    }
+    ::-webkit-scrollbar {
+        width: unset;
+    }
+}
+
 .poke-container{
+    /* margin-top: 1vh; */
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: space-between;
     justify-content: center;
-    overflow-y: auto;
-    margin: 0 auto;
+    height: 100%;
+    margin:0px auto;
+    padding: 0px 0;
     max-width: 1200px;
+
 }
 
 .poke-container .pokemon{
