@@ -100,8 +100,8 @@ body{
 	}
 }
 .main .wrapper{
-    margin-top: 10vh;
-    padding: 5vh 0;
+    margin: 10vh 0;
+    /* padding: 5vh 0; */
     animation: article-load 300ms ease-in;
     animation-fill-mode: forwards;
     transform: translateY(-20px);
@@ -109,9 +109,7 @@ body{
     
     height: 90vh;
     background: rgba(0, 0, 0, 0.2);
-display: flex;
-justify-content: center;
-align-items: center;
+
 
    
     overflow-y: scroll;
@@ -162,15 +160,6 @@ html{
     padding: 20px 0px;
 
 }
-@media screen and (max-width: 600px){
-
-    ::-webkit-scrollbar {
-        all:unset;
-    }
-    ::-webkit-scrollbar {
-        width: unset;
-    }
-}
 
 .poke-container{
     /* margin-top: 1vh; */
@@ -178,8 +167,8 @@ html{
     flex-wrap: wrap;
     align-items: space-between;
     justify-content: center;
-    height: 100%;
-    margin:0px auto;
+    /* height: 100%; */
+    margin:60px auto;
     padding: 0px 0;
     max-width: 1200px;
 

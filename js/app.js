@@ -44,7 +44,6 @@ const getPokemon = async id => {
 
 fetchPokemons();
 
-const thisPokemon = document.querySelectorAll('.pokemon')
 
 function createPokemonCard(pokemon){
 
@@ -67,19 +66,13 @@ function createPokemonCard(pokemon){
     `;
 
 
-    // thisPokemon.forEach(l => {
 
-    //     l.addEventListener('click', () => {
-    //         thisPokemon.style.display = "none"
-    //     })
-    // });
 
 
 
     pokemonEl.innerHTML = pokeInnerHTML;
     pokeContainer.appendChild(pokemonEl)
 }
-
 // function createInfo() {
 //     console.log('hello')
 // }
