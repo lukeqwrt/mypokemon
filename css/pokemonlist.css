@@ -230,6 +230,7 @@ html{
     margin: 10px 0 7px;
 	letter-spacing: 1px;
     text-transform: capitalize ;
+    color: rgb(54, 54, 54);
 }
 
 /* popup */
@@ -322,7 +323,20 @@ border-top-right-radius: 20px;
     font-size: 18px;
     font-weight: 300;
 }
-
+.poke-container #pokedex .popup span{
+    margin: 0 10px;
+}
+.poke-container #pokedex .popup span i{
+    font-size: 40px;
+    cursor: pointer;
+    color: rgb(54, 54, 54);
+    transition: 0.3s;
+}
+.poke-container #pokedex .popup span i:hover{
+    font-size: 40px;
+    cursor: pointer;
+    color: rgb(68, 68, 68);
+}
 
 /* 
 @media screen and (max-width: 694px){

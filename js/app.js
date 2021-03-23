@@ -1,7 +1,7 @@
 const pokedex = document.getElementById('pokedex')
 
 const fetchPokemon = async () => {
-    const url = `https://pokeapi.co/api/v2/pokemon?limit=150`;
+    const url = `https://pokeapi.co/api/v2/pokemon?limit=204`;
     const res = await fetch(url);
     const data = await res.json();
      pokemon = data.results.map((result, index) => 
@@ -64,7 +64,7 @@ const displayopup = (pokeman) =>{
     const type = pokeman.types.map((type) => type.type.name).join(' , ');
     const htmlString = `
         <div class="popup">
-       
+            <span onclick="back()"> <i class="fas fa-arrow-left"></i></span>
             <div class="pokemon">
                     <h3 class="name"> ${pokeman.name} </h3>  
                     <div class="img-container">
@@ -89,7 +89,9 @@ const displayopup = (pokeman) =>{
     //  console.log(htmlString)
 }
 
-
+function back(){
+    window.location.href = "./pokemonList.html"
+}
 fetchPokemon();
 
 
