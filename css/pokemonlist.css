@@ -238,6 +238,7 @@ html{
     animation-fill-mode: forwards;
     transform: translateY(-20px);
     opacity: 1;
+
 }
 @keyframes popup{
     0%{

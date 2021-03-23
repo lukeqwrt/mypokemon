@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="nav-main">
+    <!-- <div class="nav-main">
         <nav>
             <div class="logo">
                 <img src="./img/pokeball.png" alt="">
@@ -23,18 +23,32 @@
                 <li><a href="./pokemonList.html"> Pokemon List </a></li>
             </ul>
         </nav>
-    </div>
+    </div> -->
 
         <div class="main">
+            <div class="myPokemons">
+                <div class="una">
+                    <img src="./img/chikapu.png" alt="">
+                    <img src="./img/charizard.png" alt="">
+                </div>
+                <div class="dalawa">
+                    <img src="./img/sleep.png" alt="">
+                    <img src="./img/evy.png" alt="">
+                </div>
+            </div>
+
+
+
             <div id="change" class="landing-container">
                 <div class="landing-img">
                     <img src="./img/crop-pokemon-title.png" alt="">
                 </div>
 
                 <div class="input">
-                    <div class="wrapper">
-                        <input type="text" placeholder="NAME OR NUMBER">
-                        <button class="button" onclick="window.location.href = '/pokemonList.html' ">
+                    <div class="wrapper" onclick="window.location.href = './pokemonList.html' ">
+                        <!-- <input type="text" id="searchBar" placeholder="NAME OR NUMBER"> -->
+                        <div class="new">View Pokemons</div>
+                        <button class="button" >
                             <img src="./img/pokeball.png" alt="">
                         </button>
                     </div>
@@ -49,6 +63,6 @@
         </div>
 
 
-    <script src="./js/app.js"></script>
+    <!-- <script src="./js/app.js"></script> -->
 </body>
 </html>

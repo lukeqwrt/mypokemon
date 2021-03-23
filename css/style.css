@@ -54,13 +54,12 @@
 
     /* mine down */
     /* background: linear-gradient(115.2deg, #6BFFA6 11.47%, #65C8FF 58.77%, #987BD6 100.38%); */
-    height: 90vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 }
-
 @keyframes article-load{
     0%{
         transform: translateY(-20px);
@@ -71,6 +70,100 @@
         opacity: 1;
     }
 }
+.main .myPokemons{
+    position: absolute;
+    bottom: 0;   
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+.main .myPokemons .una{
+ display: flex;
+ align-items: center;
+ margin: 0 15px;
+}
+.main .myPokemons .una img{
+    height: 80px;
+    width: 80px;
+}
+.main .myPokemons .una img:nth-child(1){
+    animation: up-down 1000ms infinite alternate; 
+    /* -webkit-animation: up-down 50s linear infinite; */
+}
+@keyframes up-down{
+    0%{
+        transform: translateY(-20px);
+    }
+    50%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(-20px);
+        
+    }
+}
+.main .myPokemons .una img:nth-child(2){
+    animation: up-down 1000ms 1s infinite alternate; 
+
+    /* -webkit-animation: up-down 50s linear infinite; */
+}
+@keyframes up-down{
+    0%{
+        transform: translateY(-20px);
+    }
+    50%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(-20px);
+        
+    }
+}
+
+.main .myPokemons .dalawa{
+ display: flex;
+ align-items: center;
+ margin: 0 15px;
+}
+.main .myPokemons .dalawa img{
+    height: 80px;
+    width: 80px;
+}
+.main .myPokemons .dalawa img:nth-child(1){
+    animation: up-down 1000ms infinite alternate; 
+}
+.main .myPokemons .dalawa img:nth-child(2){
+    animation: up-down 1000ms 1s infinite alternate; 
+}
+
+.main .myPokemons .una img:nth-child(2){
+    animation: up-down 1000ms 1s infinite alternate; 
+
+    /* -webkit-animation: up-down 50s linear infinite; */
+}
+@keyframes up-down{
+    0%{
+        transform: translateY(-20px);
+    }
+    50%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(-20px);
+        
+    }
+}
+@media screen and (max-width: 500px){
+    .main .myPokemons .una img{
+        height: 50px;
+        width: 50px;
+    }
+    .main .myPokemons .dalawa img{
+        height: 50px;
+        width: 50px;
+    }
+}
 body{
 /* kua bijo */
 background-image: linear-gradient(to bottom right,#333,#6d459b,#2aace0,#55a878,#333);
@@ -79,13 +172,13 @@ animation: gradient 10s linear infinite forwards;
 }
 @keyframes gradient{
 	0% {
-		background-position: 10% 10%;
+		background-position: 0% 0%;
 	}
 	50% {
 		background-position: 100% 100%;
 	}
 	100% {
-		background-position: 10% 10%;
+		background-position: 0% 0%;
 	}
 }
 
@@ -94,48 +187,80 @@ animation: gradient 10s linear infinite forwards;
 }
 
 
+
 .main .landing-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 }
 .main .landing-container .landing-img{
 
     width: 80vmin;
+    margin-bottom: 20px;
 }
 .main .landing-container .landing-img img{
     height: 100%;
     width: 100%;
 }
 .main .landing-container .input{
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
+    height: 40px;
+    border-radius: 100px;
+    border: 2px solid rgb(58, 57, 57);
+    display: flex;
+    justify-content: space-between;
+    background: #FF5858;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.main .landing-container .input:hover{
+    border: 2px solid #FF5858;
+    background: rgb(58, 57, 57);
 }
 .main .landing-container .input .wrapper{
     display: flex;
     align-items: center;
-    width: 90%;
-    margin: 0 auto;
+    width: 95%;
+    margin: 0 auto; 
+    position: relative;
+}
+.main .landing-container .input .wrapper .new{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-right:15px;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    background: none;
+    color: white;
 }
 .main .landing-container .input .wrapper input{
     flex: 1;
     outline: none;
-    border: 2px solid black;
+    border: none;
     border-radius: 100px;
-    height: 40px;
+    height: 100%;
     margin-right:15px;
     font-size: 20px;
     padding: 0 20px;
     width: 100%;
     text-align: center;
+    background: none;
 }
 .main .landing-container .input .wrapper button{
     outline: none;
     border: none;
     background: none;
-    height: 50px;
-    width: 50px;
-    cursor: pointer;
+    height: auto;
+    width: 35px;
+    position: absolute;
+    right: 10px;
+    top: 2px;
 }
 .main .landing-container button img{
     height: 100%;
@@ -152,7 +277,7 @@ animation: gradient 10s linear infinite forwards;
 .main .landing-container .poke-api p:nth-child(1){
     background: rgba(223, 223, 223, 0.541);
     border-radius: 100px;
-   width: 90%;
+   width: 80%;
    margin: 0 auto;
    padding: 10px 0; 
     font-size: 17px;
@@ -164,4 +289,14 @@ animation: gradient 10s linear infinite forwards;
     font-size:18px;
     color: black;
     margin: 15px 10px;
+}
+
+@media screen and (max-width: 500px){
+    .main .landing-container .poke-api p:nth-child(2){
+        color: gray;
+        font-size:14px;
+        color: black;
+        margin: 15px 10px;
+    }
+    
 }

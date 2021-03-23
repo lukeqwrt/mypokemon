@@ -4,7 +4,7 @@ const fetchPokemon = async () => {
     const url = `https://pokeapi.co/api/v2/pokemon?limit=150`;
     const res = await fetch(url);
     const data = await res.json();
-    const pokemon = data.results.map((result, index) => 
+     pokemon = data.results.map((result, index) => 
     ({
         ...result,
         id: index + 1,
@@ -12,12 +12,12 @@ const fetchPokemon = async () => {
         
     }))
     displayPokemon(pokemon);
-    console.log(pokemon)
+    // console.log(pokemon)
 };
 // const name = pokeman.name[0].toUpperCase() + pokemon.name.slice(1);
 const displayPokemon = (pokemon) => {
 
-    console.log(pokemon);
+    // console.log(pokemon);
     // const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
     // console.log(pokemon.name)
     const pokemonHTMLString = pokemon
@@ -40,6 +40,12 @@ const displayPokemon = (pokemon) => {
     pokedex.innerHTML = pokemonHTMLString;
 };
 
+
+
+const searchBar = document.getElementById('searchBar');
+
+
+
 const selectPokemon = async (id) => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
     const res = await fetch(url);
@@ -47,9 +53,10 @@ const selectPokemon = async (id) => {
     displayopup(pokeman);
 }
 
+
 const displayopup = (pokeman) =>{
     const mywidth = document.querySelector('.poke-container')
-    console.log(mywidth)
+    // console.log(mywidth)
     mywidth.style.maxWidth = "100vmin"
     mywidth.style.marginBottom = "20px"
 
@@ -57,6 +64,7 @@ const displayopup = (pokeman) =>{
     const type = pokeman.types.map((type) => type.type.name).join(' , ');
     const htmlString = `
         <div class="popup">
+       
             <div class="pokemon">
                     <h3 class="name"> ${pokeman.name} </h3>  
                     <div class="img-container">
@@ -77,18 +85,12 @@ const displayopup = (pokeman) =>{
                
         </div>
      `;
-     pokedex.innerHTML = htmlString ;
+     pokedex.innerHTML = htmlString;
     //  console.log(htmlString)
 }
-// const closePopup = () => {
-//     const popup = document.querySelector('.popup')
-
-//     popup.parentElement.removeChild(popup)
-// }
 
 
 fetchPokemon();
-
 
 
 // const colors = {
