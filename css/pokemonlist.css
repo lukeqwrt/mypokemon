@@ -81,6 +81,58 @@
 .main{
     /* height: 100vh; */
 }
+.search-container{
+    box-shadow: 0px 0px 0px white, 0px -3px 10px #333;
+    /* box-shadow: 0px -3px -10px rgb(0 0 0 / 30%); */
+    width: 100%;
+    height: 3vh;
+    z-index: 9099;
+    background: rgb(58, 57, 57);
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.search-container .trapezoid{
+    filter: drop-shadow(-2px -4px 3px #222);
+    /* box-shadow: 0px 0px 0px white, 0px -3px 10px #333; */
+    border-bottom: 80px solid #FF5858;
+	border-left: 60px solid transparent;
+	border-right: 60px solid transparent;
+	height: 0;
+    width: 90%;
+    padding: 0 0;
+    display: flex;
+    justify-content: center;
+    margin: 0 0px;
+}
+.search-container .control{
+    display: flex;
+    justify-content: center;
+}
+.search-container .control{
+    width: 100%;
+}
+.search-container .control input{
+    border: 2px solid rgb(58, 57, 57);
+    /* max-width: 480px; */
+   
+    height: 30px;
+    width: 100%;
+    outline: none;
+    border-radius: 100px;
+    text-align: center;
+    margin: 10px 10px;
+    padding: 0 0px;
+}
+@media screen and (min-width: 700px){
+    .search-container .trapezoid{
+        max-width: 500px;
+    }
+}
 body{
     background-image: linear-gradient(to bottom right,#333,#6d459b,#2aace0,#55a878,#333);
     /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
@@ -166,7 +218,7 @@ html{
     /* margin-top: 1vh; */
 
     /* height: 100%; */
-    margin:60px auto;
+    margin:40px auto 60px ;
     padding: 0px 0;
     max-width: 1200px;
 
@@ -229,7 +281,7 @@ html{
 .poke-container .pokemon .name{
     margin: 10px 0 7px;
 	letter-spacing: 1px;
-    text-transform: capitalize ;
+    /* text-transform: capitalize ; */
     color: rgb(54, 54, 54);
 }
 

@@ -1,5 +1,24 @@
 const pokedex = document.getElementById('pokedex')
 
+let pokemon = [];
+// displayopup(pokeman);
+const searchBar = document.getElementById('searchBar')
+searchBar.addEventListener('keyup', (e) => {
+    const searchString = e.target.value;
+
+    const filteredPokemon = pokemon.filter((character) => {
+        return (
+            // console.log(character.id)
+            character.name.includes(searchString) ||
+            character.id.toString().padStart(1, '0').includes(searchString)
+        );
+    });
+    
+    // console.log(filteredCharacters)
+    // displayopup(pokeman)
+    displayPokemon(filteredPokemon);
+});
+
 const fetchPokemon = async () => {
     const url = `https://pokeapi.co/api/v2/pokemon?limit=150`;
     const res = await fetch(url);
@@ -40,17 +59,13 @@ const displayPokemon = (pokemon) => {
     pokedex.innerHTML = pokemonHTMLString;
 };
 
-
-
-const searchBar = document.getElementById('searchBar');
-
-
-
 const selectPokemon = async (id) => {
-    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
-    const res = await fetch(url);
-    const pokeman = await res.json();
-    displayopup(pokeman);
+       const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+        const res = await fetch(url);
+       const pokeman = await res.json();
+        displayopup(pokeman);
+      console.log(pokeman)
+
 }
 
 
@@ -92,6 +107,7 @@ const displayopup = (pokeman) =>{
 function back(){
     window.location.href = "./pokemonList.html"
 }
+
 fetchPokemon();
 
 
