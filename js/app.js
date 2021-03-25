@@ -20,7 +20,7 @@ searchBar.addEventListener('keyup', (e) => {
 });
 
 const fetchPokemon = async () => {
-    const url = `https://pokeapi.co/api/v2/pokemon?limit=150`;
+    const url = `https://pokeapi.co/api/v2/pokemon?limit=200`;
     const res = await fetch(url);
     const data = await res.json();
      pokemon = data.results.map((result, index) => 
