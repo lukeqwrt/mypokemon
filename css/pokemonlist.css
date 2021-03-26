@@ -119,7 +119,7 @@
 .search-container .control input{
     border: 2px solid rgb(58, 57, 57);
     /* max-width: 480px; */
-   
+   text-transform: uppercase;
     height: 30px;
     width: 100%;
     outline: none;
@@ -281,7 +281,7 @@ html{
 .poke-container .pokemon .name{
     margin: 10px 0 7px;
 	letter-spacing: 1px;
-    /* text-transform: capitalize ; */
+    text-transform: capitalize ;
     color: rgb(54, 54, 54);
 }
 

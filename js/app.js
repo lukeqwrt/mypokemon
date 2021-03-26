@@ -4,12 +4,12 @@ let pokemon = [];
 // displayopup(pokeman);
 const searchBar = document.getElementById('searchBar')
 searchBar.addEventListener('keyup', (e) => {
-    const searchString = e.target.value;
+    const searchString = e.target.value.toLowerCase();
 
     const filteredPokemon = pokemon.filter((character) => {
         return (
             // console.log(character.id)
-            character.name.includes(searchString) ||
+            character.name.toLowerCase().includes(searchString) ||
             character.id.toString().padStart(1, '0').includes(searchString)
         );
     });
