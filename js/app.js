@@ -74,6 +74,8 @@ const displayopup = (pokeman) =>{
     // console.log(mywidth)
     mywidth.style.maxWidth = "100vmin"
     mywidth.style.marginBottom = "20px"
+    mywidth.style.marginTop = "25px"
+
 
     const ability = pokeman.abilities.map((ability) => ability.ability.name).join(',');
     const type = pokeman.types.map((type) => type.type.name).join(' , ');

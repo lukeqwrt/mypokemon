@@ -382,7 +382,8 @@ border-top-right-radius: 20px;
 .poke-container #pokedex .popup span i{
     font-size: 40px;
     cursor: pointer;
-    color: rgb(54, 54, 54);
+    /* color: rgb(54, 54, 54); */
+    color: white;
     transition: 0.3s;
 }
 .poke-container #pokedex .popup span i:hover{
