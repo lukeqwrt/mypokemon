@@ -45,7 +45,7 @@ const displayPokemon = (pokemon) => {
             (pokeman) => `
         <li class="pokemon" onclick="selectPokemon(${pokeman.id})">
             <div class="img-container">
-                <img class="card-image" src="https://pokeres.bastionbot.org/images/pokemon/${pokeman.id}.png"/>
+                <img class="card-image" src="./img/pokeball.png"  data-src="https://pokeres.bastionbot.org/images/pokemon/${pokeman.id}.png"/>
             </div
             <div class="info">
                 <span class="number">#${pokeman.id.toString().padStart(3, '0')}</span>
@@ -57,7 +57,58 @@ const displayPokemon = (pokemon) => {
         )
         .join('');
     pokedex.innerHTML = pokemonHTMLString;
+
+    // obserb()
+     newobserb()
 };
+function newobserb(){
+
+    const images = document.querySelectorAll("img.card-image");
+
+const imgOptions = {
+};
+const imgObserver = new IntersectionObserver((entries, imgObserver) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+
+    const img = entry.target;
+    img.src = img.getAttribute('data-src');
+    imgObserver.unobserve(entry.target);
+  });
+}, imgOptions);
+
+images.forEach((img) => {
+  imgObserver.observe(img);
+});
+}
+// function obserb(){
+//     let options = {
+//         threshold: 1
+//       }
+//       const observer = new IntersectionObserver(imageObserver, options);
+      
+//       function imageObserver(entries, observer) {
+//         entries.forEach(entry => {
+//             console.log(entry)
+//             if(entry.isIntersecting){
+//                 const img = entry.taget;
+//                 const img_src = img.getAttribute('data-src');
+//                 console.log("Lazy loading ", img_src);
+//                 // img.src = img_src;
+//                 // observer.unobserve(img);
+//             }
+//         })
+//       }
+//       let imgs = document.querySelectorAll('img.card-image');
+//     //   console.log(imgs)
+//       imgs.forEach(img => {
+//         observer.observe(img);
+//       })
+// }
+
+
+
+
 
 const selectPokemon = async (id) => {
        const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
@@ -85,7 +136,7 @@ const displayopup = (pokeman) =>{
             <div class="pokemon">
                     <h3 class="name"> ${pokeman.name} </h3>  
                     <div class="img-container">
-                        <img class="card-image" src="https://pokeres.bastionbot.org/images/pokemon/${pokeman.id}.png"/>
+                        <img class="card-image" src="./img/pokeball.png" data-src="https://pokeres.bastionbot.org/images/pokemon/${pokeman.id}.png"/>
                     </div>
             </div>
 
@@ -104,7 +155,31 @@ const displayopup = (pokeman) =>{
      `;
      pokedex.innerHTML = htmlString;
     //  console.log(htmlString)
+
+    pokemoninfoObsever()
 }
+
+function pokemoninfoObsever(){
+    const images = document.querySelectorAll("img.card-image");
+
+    const imgOptions = {
+        threshold: 1
+    };
+    const imgObserver = new IntersectionObserver((entries, imgObserver) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+    
+        const img = entry.target;
+        img.src = img.getAttribute('data-src');
+        imgObserver.unobserve(entry.target);
+      });
+    }, imgOptions);
+    
+    images.forEach((img) => {
+      imgObserver.observe(img);
+    });
+}
+
 
 function back(){
     window.location.href = "./pokemonList.html"
