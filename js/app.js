@@ -45,8 +45,9 @@ const displayPokemon = (pokemon) => {
             (pokeman) => `
         <li class="pokemon" onclick="selectPokemon(${pokeman.id})">
             <div class="img-container">
-                <img class="card-image" src="./img/pokeball.png"  data-src="https://pokeres.bastionbot.org/images/pokemon/${pokeman.id}.png"/>
-            </div
+                <img class="card-image" src="./img/pokeball.png"  data-src="https://raw.github.com/billysillano/pokemon-assets/master/images/${pokeman.id}.png"/>
+            </div>
+            
             <div class="info">
                 <span class="number">#${pokeman.id.toString().padStart(3, '0')}</span>
                 <h3 class="name"> ${pokeman.name} </h3>  
@@ -55,6 +56,9 @@ const displayPokemon = (pokemon) => {
         </li>
     `
         )
+        // https://pokeres.bastionbot.org/images/pokemon/${pokeman.id}.png
+        // https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokeman.id}.png
+        // https://raw.github.com/billysillano/pokemon-assets/master/images/${pokeman.id}.png
         .join('');
     pokedex.innerHTML = pokemonHTMLString;
 
@@ -136,7 +140,7 @@ const displayopup = (pokeman) =>{
             <div class="pokemon">
                     <h3 class="name"> ${pokeman.name} </h3>  
                     <div class="img-container">
-                        <img class="card-image" src="./img/pokeball.png" data-src="https://pokeres.bastionbot.org/images/pokemon/${pokeman.id}.png"/>
+                        <img class="card-image" src="./img/pokeball.png" data-src="https://raw.github.com/billysillano/pokemon-assets/master/images/${pokeman.id}.png"/>
                     </div>
             </div>
 
